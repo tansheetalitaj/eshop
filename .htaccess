@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+
+    # Turn on the rewrite engine
+    RewriteEngine On
+
+    # If the requested file or directory exists, serve it directly without routing
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Redirect all other requests to index.php
+    RewriteRule ^ index.php [L]
+
+</IfModule>
